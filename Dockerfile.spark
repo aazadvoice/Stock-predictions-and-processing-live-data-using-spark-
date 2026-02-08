@@ -1,0 +1,12 @@
+FROM bitnami/spark:latest
+
+USER root  # Start as root
+
+# Add the custom user 'spark'
+RUN useradd -m spark
+
+# Switch to the new 'spark' user
+USER spark
+
+# Optional: set a working directory
+WORKDIR /home/spark
